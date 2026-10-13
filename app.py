@@ -1,5 +1,5 @@
 import streamlit as st
-from PyPDF2 import PdfMerger
+from pypdf import PdfMerger
 import io
 
 st.title("Merge PDF")
@@ -27,8 +27,8 @@ if uploaded_files:
         output.seek(0)
 
         st.download_button(
-            label="Download PDF Gabungan",
-            data=output,
-            file_name="merged_pdf.pdf",
-            mime="application/pdf"
+            "Download PDF Gabungan",
+            output,
+            "merged_pdf.pdf",
+            "application/pdf"
         )
